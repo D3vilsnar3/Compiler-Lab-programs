@@ -1,0 +1,30 @@
+%{
+	#include<stdio.h>
+	#include<stdlib.h>
+	int yylex();
+	int yyerror(char *a);
+%}
+%token LETTER
+%token NUM
+%token UNDERSCORE
+%%
+variable: LETTER extrachar
+	 | LETTER
+extrachar: extrachar LETTER
+	 | LETTER
+	 | NUM
+	 | UNDERSCORE
+	 ;
+%%
+void main()
+{
+	printf("\n\t Enter the variable: ");
+	yyparse();
+}
+int yyerror(char *a)
+{
+	printf("Invalid variable");
+	exit(0);
+	return(0);
+}
+

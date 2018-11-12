@@ -1,0 +1,11 @@
+void main()
+{
+int a,b,c;
+b=47;
+c=52;
+a=b+c;
+printf("a");
+char ch[10],ab;
+ch="hello";
+
+}
